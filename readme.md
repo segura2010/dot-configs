@@ -12,3 +12,9 @@ Theme: https://github.com/lex148/leftwm-coffee
 
 (Polybar is needed)
 
+### Starship
+
+Website: https://starship.rs/
+
+Config in: ~/.config/starship.toml
+
