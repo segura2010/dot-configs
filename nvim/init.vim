@@ -36,7 +36,7 @@ set splitright
 set splitbelow
 set backspace=indent,eol,start
 set nowrap
-set nohlsearch
+" set nohlsearch
 set ttimeoutlen=10
 set noswapfile
 set colorcolumn=80
@@ -123,9 +123,24 @@ set sidescrolloff=8
 set title
 set laststatus=2
 set statusline="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L"
+set cursorcolumn
+set cursorline
 
 " -----------------------------------------------------------------------------
 "     - Plugins -
 " -----------------------------------------------------------------------------
 " Gruvbox theme
 autocmd vimenter * ++nested colorscheme gruvbox
+
+" -- SHOW INDENTATION --
+" use 4 spaces for tabs
+set tabstop=4 softtabstop=4 shiftwidth=4
+" display indentation guides
+"set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+set list listchars=tab:❘·,trail:·,extends:»,precedes:«
+" convert spaces to tabs when reading file
+autocmd! bufreadpost * set noexpandtab | retab! 4
+" convert tabs to spaces before writing file
+autocmd! bufwritepre * set expandtab | retab! 4
+" convert spaces to tabs after writing file (to show guides again)
+autocmd! bufwritepost * set noexpandtab | retab! 4
