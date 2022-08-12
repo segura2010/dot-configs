@@ -6,6 +6,8 @@ Just a backup for my config files.
 
 **WezTerm**: https://wezfurlong.org/wezterm/
 
+Config in: ~/.wezterm.lua
+
 ### LeftWM
 
 Config in: ~/.config/leftwm/
