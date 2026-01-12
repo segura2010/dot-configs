@@ -32,3 +32,9 @@ Config in: ~/.config/init.vim (Linux)
 
 Config in: %LOCALAPPDATA%/nvim/init.vim (Windows)
 
+
+### Hyprland (CachyOS)
+
+Website: https://hypr.land/
+
+Config in: ~/.config/hypr/hyprland.conf
