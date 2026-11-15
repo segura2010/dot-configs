@@ -37,4 +37,5 @@ Config in: %LOCALAPPDATA%/nvim/init.vim (Windows)
 
 Website: https://hypr.land/
 
-Config in: ~/.config/hypr/hyprland.conf
+Config in: ~/.config/hypr/hyprland.lua
+old: Config in: ~/.config/hypr/hyprland.conf
