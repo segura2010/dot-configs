@@ -21,8 +21,8 @@ hl.monitor({
 
 local terminal    = "kitty"
 local fileManager = "dolphin"
--- local menu     = "hyprlauncher"
-local menu        = "wofi --show drun"
+local noctCall    = "noctalia msg "
+local menu        = noctCall .. "panel-toggle launcher" -- noctalia launcher (alt: "wofi --show drun")
 
 
 -------------------
@@ -31,10 +31,8 @@ local menu        = "wofi --show drun"
 
 hl.on("hyprland.start", function()
     hl.exec_cmd(terminal)
-    hl.exec_cmd("nm-applet")
-    hl.exec_cmd("blueman-applet")
-    hl.exec_cmd("waybar") -- & hyprpaper & firefox
     hl.exec_cmd("dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("noctalia") -- bar, notifications, launcher (replaces waybar/nm-applet/blueman, not installed)
 end)
 
 
@@ -204,6 +202,7 @@ hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())          -- dwindle
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("brave"))
